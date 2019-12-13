@@ -393,3 +393,479 @@
                                     </div>
                                     <!-- .end .wrap -->
                             </section>
+
+                            <section class="bg-apple">
+                              <!--.wrap = container (width: 90%) -->
+                              <h1>Localization</h1>
+                          </section>
+                          <section class="bg-apple">
+                                  <!--.wrap = container (width: 90%) -->
+                                  <div class="wrap size-50">
+                                    <h1>Localization is knowing where the rover is at all times.</h1>
+                                    <h2 class="text-intro">This consists of two elements: Orientation and Position</h2>
+                                  </div>
+                                  <!-- .end .wrap -->
+                          </section>
+                          <section class="bg-apple">
+                            <!--.wrap = container (width: 90%) -->
+                            <div class="wrap size-50">
+                              <h1>Orientation calculates the rover's rotation. The tilt and angles.</h1>
+                              <h2 class="text-intro">This is useful for finding the heading, and the incline. Let's describe a few devices.</h2>
+                            </div>
+                            <!-- .end .wrap -->
+                    </section>
+
+                    <section class="bg-apple">
+                      <span class="background-left-bottom">
+                        <div class="sketchfab-embed-wrapper">
+                          <iframe title="A 3D model" width="640" height="480" src="https://sketchfab.com/models/cf16dd371599493da8aa856071c26903/embed?autostart=1&amp;camera=0" frameborder="0" allow="autoplay; fullscreen; vr" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+                      
+                      <p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+                          <a href="https://sketchfab.com/3d-models/3x3-cube-solve-cf16dd371599493da8aa856071c26903?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">3x3 Cube Solve</a>
+                          by <a href="https://sketchfab.com/etherlyte?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Etherlyte</a>
+                          on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campaign=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+                      </p>
+                      </div>
+                      </span>
+                     
+                      <div class="wrap">
+                        <div class="content-right">
+                          <ul class="flexblock specs">
+                              <h2>      Orientation and Rotations</h2>
+                            <li>
+                              <div>
+                                <svg class="fa-bolt">
+                                  <use xlink:href="#fa-bolt"></use>
+                                </svg>
+                                <h2>Gyroscope</h2>
+                                Measures angular velocity.
+                              </div>
+                            </li>
+                            <li>
+                              <div>
+                                <svg class="fa-globe">
+                                  <use xlink:href="#fa-globe"></use>
+                                </svg>
+                                <h2>Magnetometer</h2>
+                                Measures magnetic field.
+                              </div>
+                            </li>
+                            <li>
+                              <div>
+                                <svg class="fa-lock">
+                                  <use xlink:href="#fa-lock"></use>
+                                </svg>
+                                <h2>Accelerometer</h2>
+                                Measures acceleration.
+                              </div>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <!-- .end .wrap -->
+                    </section>
+                  </section>
+
+                  <section class="bg-apple">
+                      <div class="wrap">
+                        <div class="grid vertical-align">
+                          <div class="column">
+                            <h2>
+                              Defining Rotations in 3D.
+                            </h2>
+                            <p class="text-intro">In order to rotate in 3D we must first define a class to handle such. We will use vectors. 
+                              For 3D rotation three angles, the yaw, pitch, and roll, are used. We can calculate these by describing rotations as a matrix.
+                            on each axis.                           </p>
+                          </div>
+                          <div class="column">
+                                  <figure>
+                                    <img src="static/images/RotA.png" alt="iPhone">
+                                  </figure>
+                          </div>
+                          <!-- end .column-->
+                          <div class="column">
+                            <figure>
+                              <img src="https://lh5.googleusercontent.com/83xWu5ySYIqfYZgEBEXyJELKMSj_ux2nMVo0cX5ZeDweqwQbEIkL_QzXK2IFrNPZ_ivHslK0bFvmNwIjKonfda-Pr1rzJ3iBqrpF2vobKVpsSe4Jq-HWpe6lTv9_gtSAg9uz7TTz" alt="iPhone">
+                            </figure>
+                          </div>
+                          <!-- end figure-->
+                        </div>
+                        <!-- end .grid-->
+                      </div>
+                      <!-- end .wrap-->
+                      
+                    </section>
+
+                                                
+                    <section class="bg-apple">
+                        <!--.wrap = container (width: 90%) -->
+                        <div class="wrap size-50">
+                                <h1>Full matrix.</h1>
+                            <h4>By multiplying all three axes of rotation a final matrix is produced.</h4>
+                            <h4>This matrix known as the Euler Rotation Matrix allows for yaw, pitch, and roll to be calculated. It works similar to a gimbal.</h4>
+                            
+                        </div>
+                        <figure><img class="aligncenter" src="static/images/ROTF.png" alt="Euler Rotation"></figure>
+                        <!-- .end .wrap -->
+                </section>
+
+                <section class="bg-apple">
+                    <div class="wrap">
+                      <div class="grid vertical-align">
+                        <div class="column">
+                          <h2>
+                            Gyroscopes
+                          </h2>
+                          <p class="text-intro">Gyroscopes calculate angular velocity. It can calculate the angular velocity of all three axes.
+                            Gyroscopes uses a spinning gimbal to lock each axis in place. When the axes are displace, this is calculated as a force.
+                          The force can be calculated mathematically via the cross product.                      </p>
+                        </div>
+                        <div class="column">
+                                <figure>
+                                  <img src="https://www.researchgate.net/profile/Felix_Hamza_Lup/publication/330684410/figure/fig1/AS:736297777909764@1552558478731/Gyroscope-components-and-gyroscopic-precession.jpg" alt="iPhone">
+                                </figure>
+                        </div>
+                      </div>
+                      <!-- end .grid-->
+                    </div>
+                    <!-- end .wrap-->
+                    
+                  </section>
+
+                                                                  
+                  <section class="bg-apple">
+                      <!--.wrap = container (width: 90%) -->
+                      <div class="wrap size-50">
+                              <h1>Gimbal Lock</h1>
+                          <h4>Sadly, there is an issue with this method. When two axes align they become locked in place.</h4>
+                          <h4>This is a property of the Euler Rotation Matrix. This means the rotation matrix is not sufficient for accurate rotations.</h4>
+                          
+                      </div>
+                      <figure><img class="aligncenter" src="https://lh4.googleusercontent.com/Pq9exwfSH4_8U-hTaRuyCLbtr3k5_sCV493PUgXJKQZH1GrO8N_gg8LubRTBR3mD7GazDfWf91DHb0dPyawG-wGLD6nX6htGiGWmgU6p33QqfXW_86MSQD2PqJkHInw5vcp-Y_Aq" alt="Euler Rotation"></figure>
+                      <!-- .end .wrap -->
+              </section>
+
+              
+              <section class="bg-apple">
+                  <div class="wrap">
+                    <div class="grid vertical-align">
+                      <div class="column">
+                        <h2>
+                          Rotors
+                        </h2>
+                        <p class="text-intro">We can instead rotate via outter products. This method uses the bivector, which represents the plane produced
+                          by taking the outter product. This is similar to representing rotations via the cross product, or the gyrscope.
+                       </p>
+                       <p class="text-intro">Bivectors contain components just like a vector, but in terms of a plane and not a line.
+                         Through reflections, a bivector can be split into a component within a plane and outside the plane. 
+                         These two components can be used to calculate the rotation on the three axes. This method is known as a Rotor. 
+                       </p>
+                      </div>
+                    </div>
+                    <!-- end .grid-->
+                  </div>
+                  <!-- end .wrap-->
+                </section>
+
+
+                <section class="bg-apple">
+                    <div class="wrap">
+                      <div class="grid vertical-align">
+                        <div class="column">
+                          <h2>
+                            Quaternions
+                          </h2>
+                          <p class="text-intro">When extended into 3D the most commonly used Rotor is known as the Quaternion. 
+                            Quaternions are a special case of a Rotor, where i, j, k represents the rotation. Quaternions are special 
+                          because they use complex numbers to represent rotations.</p>
+                        </div>
+                        <div class="column">
+                                <figure>
+                                  <img src="static/images/Quat.png" alt="iPhone">
+                                </figure>
+                        </div>
+                      </div>
+                      <!-- end .grid-->
+                    </div>
+                    <!-- end .wrap-->
+                  </section>
+
+                  <section class="bg-apple">
+                      <!--.wrap = container (width: 90%) -->
+                      <div class="wrap size-50">
+                        <h1>More in-depth overview of Rotors</h1>
+                        <a href="https://marctenbosch.com/quaternions/" class="button zoomIn" title="Pathfinding">
+                          Rotors
+                          </a>
+                      </div>
+                      <!-- .end .wrap -->
+                    </section>
+
+                    <section class="bg-apple">
+                        <div class="wrap">
+                          <div class="card-50">
+                            <figure><iframe src='https://gfycat.com/ifr/AppropriateDistantAsiandamselfly' frameborder='0' scrolling='no' allowfullscreen width='640' height='412'></iframe><p> <a href="https://gfycat.com/appropriatedistantasiandamselfly">via Gfycat</a></p></figure>
+                            <div class="flex-content">
+                              <h2>
+                                <svg class="fa-apple">
+                                  <use xlink:href="#fa-apple"></use>
+                                </svg>
+                                Magnetometer
+                              </h2>
+                              <p class="text-intro">Even with gyrscope and quaternions it is still not accurate enough to calulcate angular positioning.</p>
+                              <p>Gyrscopes get angular velocity. By taking the integral you can derive the position, but it comes with a fair degree of error.
+                                Magnetometer gives exact angular position, based on absolute world coordinates (true magnetic north), instead of relative coordinates.
+                              </p>
+                            </div>
+                            <!-- end .flex-content-->
+                          </div>
+                          <!-- end .card-50-->
+                        </div>
+                        <!-- .end .wrap -->
+                      </section>
+
+                      <section class="bg-apple">
+                          <div class="wrap">
+                            <div class="card-50">
+                                <figure><img class="aligncenter" src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Geodynamo_Between_Reversals.gif" alt="Ultrasound"></figure>
+                              <div class="flex-content">
+                                <h2>
+                                  <svg class="fa-apple">
+                                    <use xlink:href="#fa-apple"></use>
+                                  </svg>
+                                  Errors
+                                </h2>
+                                <p class="text-intro">However, due to magnetometer calculating a weak force, Earth's magnetic field, it has a fair degree of error as well.</p>
+                                <p>Many devices can produce a local magnetic field, and thus cause the magnetometer to read falsely. In standard testing, this is usually an error
+                                  of 10-7 degrees.
+                                </p>
+                              </div>
+                              <!-- end .flex-content-->
+                            </div>
+                            <!-- end .card-50-->
+                          </div>
+                          <!-- .end .wrap -->
+                        </section>
+
+                        <section class="bg-apple">
+                            <div class="wrap">
+                              <div class="card-50">
+                                <div class="flex-content">
+                                  <h2>
+                                    Accelerometer
+                                  </h2>
+                                  <p class="text-intro">Accelerometers are the perfect device. By measuring force from acceleration. It can calculate not just orientation, but also rotation.</p>
+                                  <p>These can be derived by double integrating the accelerometer. In order for this to be achieve gravity must be removed.
+                                  </p>
+                                </div>
+                                <!-- end .flex-content-->
+                              </div>
+                              <!-- end .card-50-->
+                            </div>
+                            <!-- .end .wrap -->
+                          </section>
+
+                          <section class="bg-apple">
+                              <div class="wrap">
+                                <div class="grid vertical-align">
+                                  <div class="column">
+                                    <h2>
+                                      Gravity Component
+                                    </h2>
+                                    <p class="text-intro">Accelerometers will experience a force of 9.8ms^2 due to gravity. However, as the object rotates this force
+                                      is distributed along all three axes. In order to remove this force we must subtract it, or find its inverse. This can be done by multiplying with our
+                                    rotation matrix and solving.                </p>
+                                  </div>
+                                  <div class="column">
+                                          <figure>
+                                            <img src="https://lh3.googleusercontent.com/RQRjFcEzamwWx_AtCu1RcwkmtlUcn3k3RdHLwJlkDNJ_abEZ44Vtc4QFAoz8liHjTJSNZ1roEABWZXINv7JoDygvBQwcfJGo-S7slD7Dhix4t1za_zqX-cWxesQP-0zoBhSiImnB" alt="iPhone">
+                                          </figure>
+                                  </div>
+                                  <!-- end .column-->
+                                  <div class="column">
+                                    <figure>
+                                      <img src="static/images/GRAVITY.png" alt="iPhone">
+                                    </figure>
+                                  </div>
+                                  <!-- end figure-->
+                                </div>
+                                <!-- end .grid-->
+                              </div>
+                              <!-- end .wrap-->
+                            </section>
+
+                            <section class="bg-apple">
+                                <div class="wrap">
+                                  <div class="card-50">
+                                    <div class="flex-content">
+                                      <h2>
+                                        YAW
+                                      </h2>
+                                      <p class="text-intro">However, the yaw is still missing. By definition, an accelerometer cannot properly calculate the yaw angle. We must combine
+                                        all three devices in order to get accurate orientation....
+                                      </p>
+                                    </div>
+                                    <!-- end .flex-content-->
+                                  </div>
+                                  <!-- end .card-50-->
+                                </div>
+                                <!-- .end .wrap -->
+                              </section>
+
+                              <section class="bg-apple">
+                                  <div class="wrap">
+                                    <div class="grid vertical-align">
+                                      <div class="column">
+                                        <h2>
+                                          Sensor Fusion, The Kalman Filter
+                                        </h2>
+                                        <p class="text-intro">Being computer science, we can use a technique commonly found in machine learning and statistics. That is mathematical filters.
+                                          One such filter is the Kalman Filter. We can use the data from all three sensors and try to predict the next value based on the previous values.
+                                          A brief view of the Kalman Filter is as follows          </p>
+                                      </div>
+                                      <div class="column">
+                                              <figure>
+                                                <img src="http://www.ece.montana.edu/seniordesign/archive/SP14/UnderwaterNavigation/website_images/kalman_f.PNG" alt="iPhone">
+                                              </figure>
+                                      </div>
+                                      <!-- end .column-->
+                                      <div class="column">
+                                        <figure>
+                                          <img src="https://miro.medium.com/max/640/1*KYwyeQpcrxTDn8cEy5O0-g.png" alt="iPhone">
+                                        </figure>
+                                      </div>
+                                      <!-- end figure-->
+                                    </div>
+                                    <!-- end .grid-->
+                                  </div>
+                                  <!-- end .wrap-->
+                                </section>
+                                <section class="bg-apple">
+                                <div class="wrap">
+                                    <div class="content-right">
+                                      <ul class="flexblock specs">
+                                          <h2>Our Rotation Uses</h2>
+                                        <li>
+                                          <div>
+                                            <svg class="fa-bolt">
+                                              <use xlink:href="#fa-bolt"></use>
+                                            </svg>
+                                            <h2>Gyroscope</h2>
+                                            Measures angular velocity, but accumulating errors.
+                                          </div>
+                                        </li>
+                                        <li>
+                                          <div>
+                                            <svg class="fa-globe">
+                                              <use xlink:href="#fa-globe"></use>
+                                            </svg>
+                                            <h2>Magnetometer</h2>
+                                            Measures magnetic field, but has an error of 1-7 degrees
+                                          </div>
+                                        </li>
+                                        <li>
+                                          <div>
+                                            <svg class="fa-lock">
+                                              <use xlink:href="#fa-lock"></use>
+                                            </svg>
+                                            <h2>Accelerometer</h2>
+                                            Measures acceleration, but cannot measure Yaw.
+                                          </div>
+                                        </li>
+                                      </ul>
+                                    </div>
+                                    <h2>The Kalman Filter solves these errors by combining the sensors. Each correcting the other.</h2>
+                                  </div>
+
+                                  <!-- .end .wrap -->
+                                </section>
+                              </section>
+
+                              <section class="bg-apple">
+                                  <!--.wrap = container (width: 90%) -->
+                                  <div class="wrap size-50">
+                                    <h1>More in-depth overview of Kalman Filter</h1>
+                                    <a href="https://www.bzarg.com/p/how-a-kalman-filter-works-in-pictures/" class="button zoomIn" title="Kalman Filter">
+                                      Kalman
+                                      </a>
+                                  </div>
+                                  <!-- .end .wrap -->
+                                </section>
+
+                                <section class="bg-apple">
+                                    <div class="wrap">
+                                      <div class="card-50">
+                                        <figure><img class="aligncenter" src="static/images/GPS.png" alt="Ultrasound"></figure>
+                                        <div class="flex-content">
+                                          <h2>
+                                            <svg class="fa-apple">
+                                              <use xlink:href="#fa-apple"></use>
+                                            </svg>
+                                            GPS
+                                          </h2>
+                                          <p class="text-intro">Accuracy: 3-10 meters, update per second, use case: global coordinates.</p>
+                                          <p>Finding position is the second challenge. GPS is an excellent device for tracking position over a wide field.
+                                            This does not mean GPS is perfect. GPS gives only an estimated positioning.
+                                          </p>
+                                        </div>
+                                        <!-- end .flex-content-->
+                                      </div>
+                                      <!-- end .card-50-->
+                                    </div>
+                                    <!-- .end .wrap -->
+                                  </section>
+
+                                  <section class="bg-apple">
+                                      <div class="wrap">
+                                        <div class="grid vertical-align">
+                                          <div class="column">
+                                            <h2>
+                                              Calculating Bearing
+                                            </h2>
+                                            <figure><img class="aligncenter" src="static/images/GLOBE.png" alt="Globe"></figure>
+                                            <p class="text-intro">The bearing is the angle at which the rover needs to turn in order to reach a certain destination.
+                                              This can be represented as a vector. With an angle and distance, the rover can travel the imaginary line.
+                                           </p>
+                                           <p class="text-intro">However, earth is a sphere, thus this requires a method to convert the coordinates in terms of distance, and
+                                             angles. For this we use spherical coordinates.
+                                           </p>
+                                          </div>
+                                        </div>
+                                        <!-- end .grid-->
+                                      </div>
+                                      <!-- end .wrap-->
+                                    </section>
+
+                                    <section class="bg-apple">
+                                        <div class="wrap">
+                                          <div class="grid vertical-align">
+                                            <div class="column">
+                                              <h2>
+                                                Spherical Coordinates and Bearing.
+                                              </h2>
+                                              <p class="text-intro">Sperhical coordiantes is a coordinate system for 3D which uses the radial distance and angles (theta, phi) to produce a vector.
+                                                      The bearing can then be calculate by the same principles, using spherical trigonometry.</p>
+                                            </div>
+                                            <div class="column">
+                                                    <figure>
+                                                      <img src="http://tutorial.math.lamar.edu/Classes/CalcIII/SphericalCoords_Files/image001.png" alt="Spherical Formula">
+                                                    </figure>
+                                            </div>
+                                            <!-- end figure-->
+                                          </div>
+                                          <!-- end .grid-->
+                                        </div>
+                                        <!-- end .wrap-->
+                                      </section>
+
+                                    
+                  <section class="bg-apple">
+                      <!--.wrap = container (width: 90%) -->
+                      <div class="wrap size-50">
+                        <h1>More in-depth overview of Sperhical Coordinates</h1>
+                        <a href="https://www.youtube.com/watch?v=CtAnP2yxnxc" class="button zoomIn" title="Coordinates">
+                          Spherical Coordiantes
+                          </a>
+                      </div>
+                      <!-- .end .wrap -->
+                    </section>
