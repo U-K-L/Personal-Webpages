@@ -1,0 +1,343 @@
+<!doctype html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- SEO -->
+    <title>Autonomous rover project</title>
+    <meta name="description" content="Building an autonomous rover.">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS WebSlides -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/webslides.css">
+
+    <!-- Optional - CSS SVG Icons (Font Awesome) -->
+    <link rel="stylesheet" type='text/css' media='all' href="static/css/svg-icons.css">
+
+    <main role="main">
+        <article id="webslides" class="vertical">
+          <!-- Quick Guide
+            - Each parent <section> in the <article id="webslides"> element is an individual slide.
+            - Vertical sliding = <article id="webslides" class="vertical">
+            - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
+          -->
+  
+          <style>
+            ul {
+              list-style-type: none;
+              margin: 0;
+              padding: 0;
+              overflow: hidden;
+              background-color: #333;
+            }
+            
+            li {
+              float: left;
+            }
+            
+            li a {
+              display: block;
+              color: white;
+              text-align: center;
+              padding: 14px 16px;
+              text-decoration: none;
+            }
+            
+            li a:hover {
+              background-color: #111;
+            }
+            </style>
+            </head>
+            <body>
+            
+            <ul>
+              <li><a class="active" href="https://github.com/MC3-NASA/NASA-Miniture-Mars-Rover">Code</a></li>
+              <li><a href="https://sawppynasaproject.blogspot.com/">Blog</a></li>
+            </ul>
+
+
+          
+          <section>
+           <span class="background" style="background-image:url('static/images/Curiositydrawing.png')"></span>
+            <!--.wrap = container (width: 90%) -->
+            <div class="wrap aligncenter">
+              <h1><strong>Autonomous Rover</strong></h1>
+              <p class="text-intro">An open source project to recreate a miniature NASA Marss Rover<br>
+                Funded by NASA PSGC
+              </p>
+              <p>
+                <a href="https://github.com/MC3-NASA/NASA-Miniture-Mars-Rover" class="button zoomIn" title="Code">
+                  Github
+                </a>
+              </p>
+            </div>
+            <!-- .end .wrap -->
+          </section>
+          <section class="bg-apple">              <h1>The goal is to navigate to a destination successfully.</h1>
+            <!--.wrap = container (width: 90%) -->
+            <iframe src="https://giphy.com/embed/hvB3ZAFMKKhplNvwfU" width="1080" height="540" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p> <a href="https://giphy.com/gifs/hvB3ZAFMKKhplNvwfU"></a></p>
+            <h2>Using only a microcontroller...</h2>
+            <div class="wrap size-50">
+ 
+            </div>
+            <!-- .end .wrap -->
+          </section>
+          <section class="bg-apple">
+            <!--.wrap = container (width: 90%) -->
+            <div class="wrap size-50">
+              <h1>Anything that prevents the Rover from reaching its destination is an obstacle. The Rover must overcome these obstacles.</h1>
+            </div>
+            <!-- .end .wrap -->
+          </section>
+          
+                                 
+          <section class="bg-apple">
+            <!--.wrap = container (width: 90%) -->
+            <div class="wrap size-50">
+                    <h1>Destination Visual</h1>
+                <h4>A destination is given to the Rover, and then it calculates a striaght line towards that destination.</h4>
+                <figure><img class="aligncenter" src="static/images/Temple1.png" alt="Ultrasound"></figure>
+            </div>
+            <!-- .end .wrap -->
+    </section>
+    
+
+    <section class="bg-apple">
+      <!--.wrap = container (width: 90%) -->
+      <div class="wrap size-50">
+              <h1>Straight Line</h1>
+          <h4>It will continue to follow this line until an obstacle is detected. Then turn in an arbitrary direction.</h4>
+          <figure><img class="aligncenter" src="static/images/TempleCampusPath1.png" alt="Ultrasound"></figure>
+      </div>
+      <!-- .end .wrap -->
+</section>
+
+    <section class="bg-apple">
+      <div class="wrap">
+        <div class="card-50">
+          <figure><img class="aligncenter" src="static/images/BNO055.png" alt="BNO055"></figure>
+          <div class="flex-content">
+            <h2>
+              <svg class="fa-apple">
+                <use xlink:href="#fa-apple"></use>
+              </svg>
+            BNO055. Accelerometer, Magnometer, and Gyroscope.
+            </h2>
+            <p class="text-intro">An IMU is used to follow the straight line. It calculates the Rover's direction, movement, and orientation to get to the destination.</p>
+            </p>
+          </div>
+          <!-- end .flex-content-->
+        </div>
+        <!-- end .card-50-->
+      </div>
+      <!-- .end .wrap -->
+    </section>
+
+    <section class="bg-apple">
+      <div class="wrap">
+        <div class="card-50">
+          <figure><img class="aligncenter" src="static/images/GPS.png" alt="Ultrasound"></figure>
+          <div class="flex-content">
+            <h2>
+              <svg class="fa-apple">
+                <use xlink:href="#fa-apple"></use>
+              </svg>
+            GPS
+            </h2>
+            <p class="text-intro">The GPS keeps track of where the Rover is at all times.</p>
+          </div>
+          <!-- end .flex-content-->
+        </div>
+        <!-- end .card-50-->
+      </div>
+      <!-- .end .wrap -->
+    </section>
+          
+    <section class="bg-apple">
+      <!--.wrap = container (width: 90%) -->
+      <div class="wrap size-50">
+              <h1>Clearly, this does not work ...</h1>
+          <h4>A straight line is not sufficient information for the Rover to reach its destination... In this visual alone, it will not reach the destination.</h4>
+          <figure><img class="aligncenter" src="static/images/TempleCampusPath1.png" alt="Ultrasound"></figure>
+      </div>
+      <!-- .end .wrap -->
+</section>
+
+<section class="bg-apple">
+  <div class="wrap">
+    <h2>Would you drive straight towards a location? Or would you use a list of directions?</h2>
+    <h3>The Rover needs to know the following questions to reach a destination: </h3>
+    <ul class="flexblock features">
+      <li>
+        <div>
+          <h2>
+            Which direction?
+          </h2>
+        </div>
+      </li>
+      <li>
+        <div>
+
+          <h2>     
+            When to turn?
+          </h2>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>
+            How far away?
+          </h2>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>
+            Is it even possible!
+          </h2>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>
+            When to recalculate?
+          </h2>
+        </div>
+      </li>
+      <li>
+        <div>
+          <h2>
+            Where is it...?
+          </h2>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<section class="bg-apple">
+  <!--.wrap = container (width: 90%) -->
+  <div class="wrap size-50">
+          <h1>The Rover needs to know when and where to turn. Much like a car would need to know what road to take.</h1>
+  </div>
+  <!-- .end .wrap -->
+</section>
+
+<section class="bg-apple">
+  <!--.wrap = container (width: 90%) -->
+  <div class="wrap size-50">
+          <h1>These instructions are achieved by breaking the path into waypoints.</h1>
+      <h4>Each waypoint tells the Rover when and where to turn in order to reach its destination.</h4>
+      <figure><img class="aligncenter" src="static/images/TemplePoints.png" alt="Ultrasound"></figure>
+  </div>
+  <!-- .end .wrap -->
+</section>
+
+<section class="bg-apple">
+  <!--.wrap = container (width: 90%) -->
+  <div class="wrap size-50">
+          <h1>These points are calculated automatically, or set manually.</h1>
+          <iframe src="https://giphy.com/embed/MERVCxzs5ueM7HqT4h" width="540" height="320" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/MERVCxzs5ueM7HqT4h"></a></p>
+  </div>
+  <!-- .end .wrap -->
+</section>
+
+<section class="bg-apple">
+  <!--.wrap = container (width: 90%) -->
+  <div class="wrap size-50">
+          <h1>Once the Rover has calculated its path, it will use sensors to detect objects.</h1>
+  </div>
+  <!-- .end .wrap -->
+</section>
+
+<section class="bg-apple">
+  <div class="wrap">
+    <div class="card-50">
+      <figure><img class="aligncenter" src="static/images/UltrasonicSensor.png" alt="Ultrasound"></figure>
+      <div class="flex-content">
+        <h2>
+          <svg class="fa-apple">
+            <use xlink:href="#fa-apple"></use>
+          </svg>
+          Ultrasound
+        </h2>
+        <p class="text-intro">Range 190cm, Field of View 30 degrees. Method: Ultrasonic</p>
+        <p>An Ultrasound is used to detect objects. Ultrasounds have an emitter and a receiver. The sound emitted bounces off of a nearby object. The receiver detects this sound.
+           Distance is found by measuring the time it takes for the receiver to receive the emitted sound.
+        </p>
+      </div>
+      <!-- end .flex-content-->
+    </div>
+    <!-- end .card-50-->
+  </div>
+  <!-- .end .wrap -->
+</section>
+
+</section>
+<section class="bg-apple">
+  <h1>To future teams.</h1>
+  <br>
+<div class="wrap">
+    <div class="content-right">
+      <ul class="flexblock specs">
+          <h2>Three core properties to autonomous navigation</h2>
+        <li>
+          <div>
+            <svg class="fa-bolt">
+              <use xlink:href="#fa-bolt"></use>
+            </svg>
+            <h2>Calculating a Path</h2>
+            What directions to take and when?
+          </div>
+        </li>
+        <li>
+          <div>
+            <svg class="fa-globe">
+              <use xlink:href="#fa-globe"></use>
+            </svg>
+            <h2>Following the Path</h2>
+            Using GPS and IMU to follow the calculated path.
+          </div>
+        </li>
+        <li>
+          <div>
+            <svg class="fa-lock">
+              <use xlink:href="#fa-lock"></use>
+            </svg>
+            <h2>Avoid Obstacles on Path</h2>
+            Use sensors such as camera to avoid obstacles on the calculated path.
+          </div>
+        </li>
+      </ul>
+    </div>
+    <h2>Going to a destination successfully implies these core properties. 
+    </h2>
+    <h2 style="color:red;">Do not view these as seperate from each other. </h2>
+    <h2>Pathfinding is obstacle avoidance, obstacle avoidance is navigation,
+        and navigation is pathfinding. They are all one and the same.</h2>
+  </div>
+
+  <!-- .end .wrap -->
+</section>
+</section>
+
+<section class="bg-apple">
+  <!--.wrap = container (width: 90%) -->
+  <div class="wrap size-50">
+          <h1>When thinking of improvements all three should be taken into consideration.</h1>
+          <h1>"Do we need a better sensor? Can we just make a better path algorithm? Can we get a better GPS?"</h1>
+  </div>
+  <!-- .end .wrap -->
+</section>
+
+
+<section class="bg-apple">
+  <!--.wrap = container (width: 90%) -->
+  <div class="wrap size-50">
+          <h1>Ultimately, the goal is to reach the destination. That is all. By reaching the destination, it is implied that all obstacles were avoided.</h1>
+  </div>
+  <!-- .end .wrap -->
+</section>
